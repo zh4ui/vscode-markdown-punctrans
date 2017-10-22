@@ -1,0 +1,45 @@
+{
+    "name": "markdown-punctrans",
+    "displayName": "Markdown半角化光标前的标点符号",
+    "description": "将光标前的全角标点符号转化为半角，减少在macOS书写Markdown的时候中英文切换次数",
+    "version": "0.0.1",
+    "publisher": "zh4ui",
+    "engines": {
+        "vscode": "^1.17.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:markdown"
+    ],
+    "contributes": {
+        "commands":
+            [{
+                "command": "markdown.punctrans",
+                "title": "Markdown半角化光标前的标点符号"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "markdown.punctrans",
+                "key": "tab",
+                "when": "editorLangId == 'markdown' && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+            }
+        ]
+    },
+    "main": "./out/extension",
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.5.3",
+        "vscode": "^1.1.5",
+        "@types/node": "^7.0.43",
+        "@types/mocha": "^2.2.42"
+    }
+}
