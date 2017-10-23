@@ -12,7 +12,7 @@ export function activate(context: vscode.ExtensionContext) {
     console.log('Congratulations, your extension "markdown-punctrans" is now active!');
 
     context.subscriptions.push(
-        vscode.commands.registerCommand('markdown.punctrans', tabConvertPreviousChar)
+        vscode.commands.registerCommand('tabConvertLeftChar', tabConvertLeftChar)
     );
 }
 
@@ -32,7 +32,7 @@ function getReplaceChar(inputChar: string): string {
         default: return inputChar;
     }
 }
-function tabConvertPreviousChar() {
+function tabConvertLeftChar() {
     let activeTextEditor = vscode.window.activeTextEditor
     if (!activeTextEditor) return;
 
