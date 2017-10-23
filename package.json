@@ -1,5 +1,5 @@
 {
-    "name": "tab-convert-left-char",
+    "name": "tabconvertleftchar",
     "displayName": "TabConvertLeftChar for Markdown",
     "description": "Use Tab to conditionally convert the preceding characters of selections.",
     "version": "0.0.1",
@@ -26,7 +26,29 @@
                 "key": "tab",
                 "when": "editorLangId == 'markdown' && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
             }
-        ]
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "TabConvertLeftChar configuration",
+            "properties": {
+                "tabconvertleftchar.markdown": {
+                    "type": "object",
+                    "default": {
+                        /* an example conversion table 
+                        "。": ".",
+                        "，": ",",
+                        "；": ";",
+                        "·" : "`",
+                        "【": "[",
+                        "】": "]",
+                        "‘": "'",
+                        "’": "'"
+                        */
+                    },
+                    "description": "Conversion table for markdown."
+                }
+            }
+        }
     },
     "main": "./out/extension",
     "scripts": {
