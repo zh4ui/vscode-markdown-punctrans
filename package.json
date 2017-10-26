@@ -1,7 +1,7 @@
 {
-    "name": "tabconvertleftchar",
-    "displayName": "TabConvertLeftChar for Markdown",
-    "description": "Use Tab to conditionally convert the preceding characters of selections.",
+    "name": "tabreplacechar",
+    "displayName": "Tab Replace Characters Before Cursors",
+    "description": "Press tab to replace the characters before cursors to configured ones.",
     "version": "0.0.1",
     "publisher": "zh4ui",
     "engines": {
@@ -10,31 +10,46 @@
     "categories": [
         "Other"
     ],
+    "repository": {
+        "url": "https://github.com/zh4ui/vscode-tabreplacechar.git",
+        "type": "git"
+    },
     "activationEvents": [
-        "onLanguage:markdown"
+        "onCommand:zh4ui.tabreplacechar"
     ],
     "contributes": {
-        "commands":
-            [{
-                "command": "tabConvertLeftChar",
-                "title": "TabConvertLeftChar"
-            }
-        ],
         "keybindings": [
             {
-                "command": "tabConvertLeftChar",
+                "command": "zh4ui.tabreplacechar",
                 "key": "tab",
-                "when": "editorLangId == 'markdown' && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+                "when": "config.tabReplaceChar.enabled && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
             }
         ],
         "configuration": {
             "type": "object",
-            "title": "TabConvertLeftChar configuration",
+            "title": "tabReplaceChar configuration",
             "properties": {
-                "tabconvertleftchar.markdown": {
+                "tabReplaceChar.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable the keybinding of tabReplaceChar"
+                }                /*
+,
+                // as in https://github.com/Microsoft/vscode/issues/26707
+                // vscode hasn't supported per language settings for extension configurations
+                // so here uses object instead.
+                "tabReplaceChar.langConversionTable": {
                     "type": "object",
                     "default": {
-                        /* an example conversion table 
+                        "markdown" : {
+                            "。": "."
+                        }
+                    },
+                    "description": "Speficy conversion table for each language"
+                }
+                "tabReplaceChar.markdown": {
+                    "type": "object",
+                    "default": {
                         "。": ".",
                         "，": ",",
                         "；": ";",
@@ -43,10 +58,10 @@
                         "】": "]",
                         "‘": "'",
                         "’": "'"
-                        */
                     },
                     "description": "Conversion table for markdown."
                 }
+                */
             }
         }
     },
