@@ -1,7 +1,7 @@
 {
     "name": "tabreplacechar",
-    "displayName": "Tab Replace Characters Before Cursors",
-    "description": "Press tab to replace the characters before cursors to configured ones.",
+    "displayName": "TabReplaceChar",
+    "description": "Press tab to replace the character before each cursor by configuration.",
     "version": "0.0.1",
     "publisher": "zh4ui",
     "engines": {
@@ -33,35 +33,16 @@
                     "type": "boolean",
                     "default": true,
                     "description": "Enable the keybinding of tabReplaceChar"
-                }                /*
-,
-                // as in https://github.com/Microsoft/vscode/issues/26707
-                // vscode hasn't supported per language settings for extension configurations
-                // so here uses object instead.
-                "tabReplaceChar.langConversionTable": {
+                },
+                "tabReplaceChar.perLangConversionTable": {
                     "type": "object",
                     "default": {
-                        "markdown" : {
+                        "plaintext" : {
                             "。": "."
                         }
                     },
                     "description": "Speficy conversion table for each language"
                 }
-                "tabReplaceChar.markdown": {
-                    "type": "object",
-                    "default": {
-                        "。": ".",
-                        "，": ",",
-                        "；": ";",
-                        "·" : "`",
-                        "【": "[",
-                        "】": "]",
-                        "‘": "'",
-                        "’": "'"
-                    },
-                    "description": "Conversion table for markdown."
-                }
-                */
             }
         }
     },
