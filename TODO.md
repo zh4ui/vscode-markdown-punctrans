@@ -1,3 +1,2 @@
 
-* seek ways to register for different languages
-* seek ways to register different mappings for different languages
+* using object to configure the conversion table may not be appropriate, maybe I should use arrays instead
