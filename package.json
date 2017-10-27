@@ -4,11 +4,15 @@
     "description": "Press tab to replace the character before each cursor by configuration.",
     "version": "0.0.1",
     "publisher": "zh4ui",
+    "icon": "images/tabreplacechar.png",
     "engines": {
         "vscode": "^1.17.0"
     },
     "categories": [
+        "Languages",
         "Other"
+    ],
+    "keywords": [
     ],
     "repository": {
         "url": "https://github.com/zh4ui/vscode-tabreplacechar.git",
@@ -22,24 +26,21 @@
             {
                 "command": "zh4ui.tabreplacechar",
                 "key": "tab",
-                "when": "config.tabReplaceChar.enabled && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
+                "when": "config.tabReplaceChar.enable && editorTextFocus && !editorReadonly && !editorTabMovesFocus"
             }
         ],
         "configuration": {
             "type": "object",
             "title": "tabReplaceChar configuration",
             "properties": {
-                "tabReplaceChar.enabled": {
+                "tabReplaceChar.enable": {
                     "type": "boolean",
-                    "default": true,
+                    "default": false,
                     "description": "Enable the keybinding of tabReplaceChar"
                 },
                 "tabReplaceChar.perLangConversionTable": {
                     "type": "object",
                     "default": {
-                        "plaintext" : {
-                            "。": "."
-                        }
                     },
                     "description": "Speficy conversion table for each language"
                 }

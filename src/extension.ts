@@ -5,9 +5,9 @@ import * as vscode from 'vscode';
 
 const CONFIG_NAME = 'tabReplaceChar';
 
-                // as in https://github.com/Microsoft/vscode/issues/26707
-                // vscode hasn't supported per language settings for extension configurations
-                // so here uses object instead.
+// as in https://github.com/Microsoft/vscode/issues/26707
+// vscode hasn't supported per language settings for extension configurations
+// so here uses object instead.
 let g_config = vscode.workspace.getConfiguration(CONFIG_NAME);
 
 // TODO: should put into a smaller scope
@@ -39,7 +39,7 @@ function reloadConfiguration() {
 }
 
 function isConfigured(editor: vscode.TextEditor): boolean {
-    if (!g_config.get<boolean>('enabled')) {
+    if (!g_config.get<boolean>('enable')) {
         return false;
     }
     let langId = editor.document.languageId;
