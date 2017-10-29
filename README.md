@@ -29,6 +29,10 @@ Here is an example configuration specialized for markdown:
             "【": "[",
             "】": "]",
             "·": "`",
+            "（": "(",
+            "）": ")",
+            "《": "<", 
+            "》": ">",
             "。": "."
         }
     }
