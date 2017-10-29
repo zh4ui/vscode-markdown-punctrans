@@ -1,7 +1,7 @@
 {
     "name": "tabreplacechar",
     "displayName": "TabReplaceChar",
-    "description": "Press tab to replace the character before each cursor by configuration.",
+    "description": "Press tab to replace the character before each cursor.",
     "version": "0.0.1",
     "publisher": "zh4ui",
     "icon": "images/tabreplacechar.png",
